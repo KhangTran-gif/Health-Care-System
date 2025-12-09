@@ -1,0 +1,416 @@
+/* ===== GLOBAL STYLES ===== */
+body, html {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  line-height: 1.7;
+  color: #232323;
+  background: #f7fdfb;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper > *:not(.footer) {
+  flex: 1 0 auto;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: linear-gradient(100deg, #eafaf1 60%, #20c997 100%);
+  padding: 16px 24px;
+  box-shadow: 0 2px 16px rgba(32, 201, 151, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #20c997;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #232323;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+  color: #20c997;
+  transform: scale(1.05);
+}
+
+.nav-link.active {
+  color: #20c997;
+  border-bottom: 2px solid #20c997;
+}
+
+/* ===== BOOKING CONTAINER ===== */
+.booking-container {
+  background: #eafaf1;
+  padding: 40px 18px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(32, 201, 151, 0.1);
+  max-width: 1200px; /* Mở rộng container theo chiều ngang */
+  margin: 40px auto;
+  transition: box-shadow 0.3s, transform 0.3s;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.booking-container:hover {
+  box-shadow: 0 12px 32px rgba(32, 201, 151, 0.15);
+  transform: translateY(-6px);
+}
+
+/* ===== BOOKING HEADER ===== */
+.booking-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.booking-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #20c997;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI Semibold', 'Roboto', 'Arial', sans-serif;
+  text-shadow: 0 2px 4px rgba(32, 201, 151, 0.1);
+}
+
+.booking-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* ===== FORM STYLES ===== */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.form-grid-wide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột trên màn hình lớn */
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group.full-width {
+  grid-column: span 3; /* Trường "Ghi chú" chiếm cả 3 cột */
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #232323;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1.5px solid #ced4da;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, background 0.3s;
+  background: #fff;
+  width: 100%; /* Đảm bảo các trường điền đầy đủ chiều ngang */
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  background: linear-gradient(145deg, #ffffff, #f0fafa);
+  transform: scale(1.01);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #20c997;
+  box-shadow: 0 4px 16px rgba(32, 201, 151, 0.15);
+  outline: none;
+  transform: scale(1.02);
+  background: #fff;
+}
+
+/* ===== BUTTON ===== */
+.booking-button {
+  background: linear-gradient(145deg, #20c997, #17a2b8);
+  color: #fff;
+  border: none;
+  padding: 14px 38px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  box-shadow: 0 6px 20px rgba(32, 201, 151, 0.15);
+  align-self: center;
+  width: fit-content;
+}
+
+.booking-button:hover,
+.booking-button:focus {
+  background: linear-gradient(145deg, #17a2b8, #20c997);
+  box-shadow: 0 10px 28px rgba(23, 162, 184, 0.2);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.booking-button:active {
+  background: #138d75;
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.1);
+}
+
+/* ===== SUCCESS & ERROR MESSAGES ===== */
+.success-message,
+.error-message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 10px rgba(32, 201, 151, 0.06);
+}
+
+.success-message {
+  color: #155724;
+  background: #d4edda;
+  border: 1.5px solid #c3e6cb;
+}
+
+.error-message {
+  color: #721c24;
+  background: #f8d7da;
+  border: 1.5px solid #f5c6cb;
+}
+
+/* ===== WHY CHOOSE US SECTION ===== */
+.why-choose-us {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(32, 201, 151, 0.1);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #20c997;
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI Semibold', 'Roboto', 'Arial', sans-serif;
+}
+
+.reasons-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reason-card {
+  background: #eafaf1;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(32, 201, 151, 0.08);
+  padding: 24px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reason-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(32, 201, 151, 0.15);
+}
+
+.reason-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.reason-card:hover .reason-image {
+  transform: scale(1.1);
+}
+
+.reason-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #20c997;
+  margin-bottom: 12px;
+}
+
+.reason-description {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #20c997;
+  color: #fff;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -2px 8px rgba(32, 201, 151, 0.2);
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .booking-container {
+    max-width: 900px;
+  }
+
+  .form-grid-wide {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột trên màn hình vừa */
+  }
+
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+
+  .reason-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 24px 8px;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+
+  .booking-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .booking-subtitle {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .booking-form {
+    gap: 16px;
+  }
+
+  .form-grid-wide {
+    grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ */
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  .booking-button {
+    font-size: 0.95rem;
+    padding: 10px 24px;
+  }
+
+  .success-message,
+  .error-message {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 16px 0;
+  }
+
+  .why-choose-us {
+    padding: 24px 12px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
+  .reason-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .reason-image {
+    width: 80px;
+    height: 80px;
+  }
+}

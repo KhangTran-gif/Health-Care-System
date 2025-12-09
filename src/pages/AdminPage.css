@@ -1,0 +1,262 @@
+.admin-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 32px 24px 24px 24px;
+}
+
+.admin-page h2 {
+  font-size: 2rem;
+  color: #1abc9c;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f8fa;
+}
+
+.admin-sidebar-pro.static {
+  width: 220px;
+  min-width: 220px;
+  background: #232e3c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 2px 0 16px #0001;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+.sidebar-header {
+  width: 100%;
+  padding: 32px 0 18px 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #1abc9c;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #2e3b4e;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  width: 100%;
+  padding: 0;
+  margin-top: 18px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu-btn {
+  width: 90%;
+  margin: 0 auto;
+  background: #1abc9c;
+  border: none;
+  color: #fff;
+  font-size: 1.08rem;
+  padding: 13px 18px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.sidebar-menu-btn.active, .sidebar-menu-btn:hover {
+  background: #16c79a;
+  color: #fff;
+}
+
+.sidebar-section {
+  font-size: 0.98rem;
+  color: #b0b8c1;
+  padding: 8px 24px 2px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.admin-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 24px 24px 24px;
+  margin-left: 230px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.admin-title {
+  color: #1abc9c;
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  max-width: 1200px; /* tăng từ 1000px lên 1200px */
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 24px 18px 18px 18px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 1100px; /* thêm min-width để bảng không bị co lại */
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+.admin-table th {
+  background: #e8f9f4;
+  color: #1abc9c;
+  font-weight: 700;
+  padding: 14px 8px;
+  text-align: center;
+  font-size: 1.08rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.admin-table td {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 1.05rem;
+  background: #fff;
+}
+
+.admin-table tr:not(:last-child) td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-edit-btn {
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.admin-edit-btn:hover {
+  background: #16c79a;
+}
+
+.admin-delete-btn {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-delete-btn:hover {
+  background: #d9363e;
+}
+
+.admin-edit-input {
+  width: 100%;
+  border: 1px solid #1abc9c;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 1rem;
+  background: #f6f6f6;
+}
+
+.admin-save-btn {
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 0.98rem;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.admin-save-btn:hover {
+  background: #16c79a;
+}
+
+.admin-cancel-btn {
+  background: #b0b8c1;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.admin-cancel-btn:hover {
+  background: #888;
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  .admin-sidebar-pro.static {
+    width: 100vw;
+    min-width: 0;
+    border-radius: 0 0 18px 18px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    height: auto;
+  }
+  .sidebar-header {
+    padding: 18px 0 10px 0;
+    font-size: 1.1rem;
+  }
+  .sidebar-nav {
+    margin-top: 0;
+  }
+}
